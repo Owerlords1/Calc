@@ -1,14 +1,17 @@
+#include "mathlogic.h"
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include "MathCalculator.h"
+#include <QQmlEngine>
 #include <QQmlContext>
 
 int main(int argc, char *argv[])
 {
+
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
     QGuiApplication app(argc, argv);
+
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
@@ -21,12 +24,10 @@ int main(int argc, char *argv[])
                 QCoreApplication::exit(-1);
         },
         Qt::QueuedConnection);
-
-    MathCalculator calculator;
-
-    engine.rootContext()->setContextProperty("Calculator", &calculator);
-
     engine.load(url);
+
+    MathLogic Logic;
+    engine.rootContext()->setContextProperty("Logica", &Logic);
 
     return app.exec();
 }
