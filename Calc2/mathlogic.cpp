@@ -7,12 +7,12 @@ MathLogic::MathLogic(QObject *parent)
 
 void MathLogic::getNumFromQML(QString Num1, QString Num2, QString Operand, QString Result)
 {
-    MathLogic::m_Num1=Num1.toInt();
-    MathLogic::m_Num2=Num2.toInt();
+    MathLogic::m_Num1=Num1.toFloat();
+    MathLogic::m_Num2=Num2.toFloat();
     qDebug() << Num1;
     qDebug() <<Num2;
     qDebug() << Operand;
-    int Res=0;
+    float Res=0;
     if(Operand=="+"){
         Res=m_Num1+m_Num2;
     }
@@ -28,6 +28,8 @@ void MathLogic::getNumFromQML(QString Num1, QString Num2, QString Operand, QStri
     m_Result=QString::number(Res);
     Result = m_Result;
     qDebug() << m_Result;
-    emit setNumToQML(Result);
+    emit setNumToQML(m_Result);
 }
+
+
 

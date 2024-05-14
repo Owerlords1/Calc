@@ -14,11 +14,12 @@ public slots:
    void getNumFromQML (QString Num1, QString Num2, QString Operand, QString Result);
 
 signals:
-   void setNumToQML (QString Num);
+   void setNumToQML (QString Res);
+
 
 private:
-   int m_Num1;
-   int m_Num2;
+   float m_Num1;
+   float m_Num2;
 
 
 

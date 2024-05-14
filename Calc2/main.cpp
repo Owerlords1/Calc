@@ -14,6 +14,10 @@ int main(int argc, char *argv[])
 
 
     QQmlApplicationEngine engine;
+
+    MathLogic Logic;
+    engine.rootContext()->setContextProperty("Logica", &Logic);
+
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(
         &engine,
@@ -26,8 +30,7 @@ int main(int argc, char *argv[])
         Qt::QueuedConnection);
     engine.load(url);
 
-    MathLogic Logic;
-    engine.rootContext()->setContextProperty("Logica", &Logic);
+
 
     return app.exec();
 }

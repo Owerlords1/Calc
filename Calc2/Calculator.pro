@@ -8,7 +8,8 @@ SOURCES += \
         main.cpp \
         mathlogic.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += qml.qrc \
+    Source/Images.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -23,3 +24,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     mathlogic.h
+
+DISTFILES += \
+    Source/360_F_27792844_qaeEInZYJmLgo6jUwHL81cx4DB2U3Pgk_0000_Слой-1.png \
+    Source/360_F_27792844_qaeEInZYJmLgo6jUwHL81cx4DB2U3Pgk_0000_Слой-1.png \
+    Source/360_F_27792844_qaeEInZYJmLgo6jUwHL81cx4DB2U3Pgk_0000_Слой-1.png \
+    Source/360_F_27792844_qaeEInZYJmLgo6jUwHL81cx4DB2U3Pgk_0001_Слой-2.png \
+    Source/360_F_27792844_qaeEInZYJmLgo6jUwHL81cx4DB2U3Pgk_0001_Слой-2.png \
+    Source/360_F_27792844_qaeEInZYJmLgo6jUwHL81cx4DB2U3Pgk_0001_Слой-2.png
